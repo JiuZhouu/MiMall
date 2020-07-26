@@ -1,0 +1,50 @@
+@import './mixin.scss';
+@import './config.scss';
+.modal{
+    z-index: 10;
+    @include position(fixed);  //铺满整个屏
+    transition :all 0.5s;
+    .mask{
+        @include position(fixed);
+        background-color: $colorI;
+        opacity: 0.5;  //透明度
+    }
+    &.slide-enter-active{
+        top:0;
+    }
+    &.slide-leave-active{
+        top:-100%;
+    }
+    &.slide-enter{
+        top:-100%;      //不进去的时候看不见  需要放在active下面
+    }
+    .modal-dialog{
+        @include position(absolute,40%,50%,660px,auto);
+        background-color: white;
+        transform: translate(-50%,-50%);  //位移包括x轴y轴
+        .modal-header{
+            height:60px;
+            background-color: $colorJ;
+            padding:0 25px;
+            line-height: 60px;
+            font-size: 16px;
+            .icon-close{
+                @include positionImg(absolute,23px,25px,14px,14px,'/imgs/icon-close.png');
+                transition:transform .3s; //慢慢放大
+                &:hover{        //点击效果
+                    transform: scale(1.5);  //×放大成1.5倍大小
+                }
+            }
+        }
+        .modal-body{
+            padding:42px 40px 54px;
+            font-size:14px;
+        }
+        .modal-footer{
+            height:82px;
+            line-height: 82px;
+            text-align:center;
+            background-color: $colorJ;
+        }
+    }
+}

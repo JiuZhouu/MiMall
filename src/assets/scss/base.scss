@@ -1,0 +1,31 @@
+@import './mixin.scss';
+.container{
+    width:1226px;
+    margin-right:auto;
+    margin-left:auto;
+    position:relative;
+}
+a{
+    img{
+        width:100%;
+        height:100%;
+    }
+}
+input{
+    outline:none;  //外部边线
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:left;
+}
+.clearfix:before,.clearfix:after{
+    content:' ';
+    display: table;
+}
+.clearfix:after{
+    clear:both;
+}
